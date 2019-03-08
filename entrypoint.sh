@@ -23,7 +23,7 @@ make_backup() {
 }
 
 upload_backup() {
-  local remote_path=`date +%Y`/`date +%m`/$1
+  local remote_path=`date +%Y`/`date +%m`/`basename $1`
   aws s3 cp $1 s3://$AWS_S3_BUCKET/$remote_path
   aws s3 cp $1 s3://$AWS_S3_BUCKET/latest.tar.gz
 }
