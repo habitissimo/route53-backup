@@ -32,7 +32,7 @@ aws_secret_access_key=<your-secret-access-key>
 
 ``` bash
 docker run --rm \
-  -v $(pwd)/credentials:/root/.aws/config
+  -v $(pwd)/credentials:/root/.aws/config \
   -e AWS_CONFIG_FILE=/root/.aws/config \
   -e AWS_S3_BUCKET=<your-bucket-name> \
   habitissimo/route53-backup
