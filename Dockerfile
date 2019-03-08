@@ -2,8 +2,12 @@ FROM library/golang:1.12-alpine AS build
 # Use library/golang image to build cli53 as the available binary
 # on GitHub does not work in alpine distribution
 
-RUN apk add --no-cache --update --virtual .build-deps git \
-    && GO15VENDOREXPERIMENT=1 go get github.com/barnybug/cli53/cmd/cli53 \
+ENV CLI53_VERSION 0.8.15
+RUN apk add --no-cache --update --virtual .build-deps git make \
+    && git clone https://github.com/barnybug/cli53.git /go/src/github.com/barnybug/cli53 \
+    && cd /go/src/github.com/barnybug/cli53 \
+    && git checkout ${CLI53_VERSION} \
+    && make build \
     && apk del .build-deps
 
 
