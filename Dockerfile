@@ -16,9 +16,9 @@ LABEL maintainer "Joan Font <jfont@habitissimo.com>"
 
 ENV AWSCLI_VERSION 1.16.120
 
-COPY --from=build /go/bin/cli53 /usr/bin/cli53
+COPY --from=build /go/src/github.com/barnybug/cli53/cli53 /usr/bin/cli53
 
-RUN apk add --update --no-cache python python-dev py-pip jq tar \
+RUN apk add --update --no-cache openssl ca-certificates python python-dev py-pip jq tar \
     && pip install awscli==${AWSCLI_VERSION}
 
 ADD entrypoint.sh /
