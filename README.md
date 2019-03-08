@@ -1,4 +1,9 @@
 # route53-backup
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/habitissimo/route53-backup.svg)
+![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/habitissimo/route53-backup.svg)
+![Docker Pulls](https://img.shields.io/docker/pulls/habitissimo/route53-backup.svg)
+![Docker Stars](https://img.shields.io/docker/stars/habitissimo/route53-backup.svg)
+
 A tool that makes backups of AWS Route53 records and stores them to S3 bucket
 
 * [barnybug/cli53](https://github.com/barnybug/cli53)
